@@ -1,34 +1,26 @@
 import React, { Component } from 'react';
 import {HashRouter, Route, Switch} from 'react-router-dom';
-import {Grid, Menu, Segment ,Breadcrumb} from 'semantic-ui-react';
+import {Button} from 'semantic-ui-react';
+import SidebarOP from './Components/Sidebar';
+import axios from 'axios';
 
 const Main = (props) => {
 
+  const clickFunction = () => {
+    axios({
+      method:'post',
+      url:'localhost:3000/signin/login',
+    })
+      .then((response) => {
+        
+      });
+  };
   return (
-    <div>
-      <Breadcrumb size="huge">
-        <Breadcrumb.Section link>Home</Breadcrumb.Section>
-        <Breadcrumb.Divider />
-        <Breadcrumb.Section link>Store</Breadcrumb.Section>
-        <Breadcrumb.Divider />
-        <Breadcrumb.Section active>T-Shirt</Breadcrumb.Section>
-      </Breadcrumb>
-
-
-      <Grid>
-        <Grid.Column width={2}>
-          <Menu fluid vertical tabular>
-            <Menu.Item name='bio' />
-            <Menu.Item name='pics'  />
-            <Menu.Item
-              name='companies'
-            />
-            <Menu.Item
-              name='links'
-            />
-          </Menu>
-        </Grid.Column>
-      </Grid>
+    <div className="app">
+      <div className="app-body">
+        <SidebarOP />
+      </div>
+      <Button active onClick={clickFunction}> Push Me</Button>
     </div>
   );
 };

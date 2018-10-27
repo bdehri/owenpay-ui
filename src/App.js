@@ -8,13 +8,6 @@ const App = (props) => {
   return (
     <div className="App">
       <header className="App-header">
-        <Breadcrumb>
-          <Breadcrumb.Section link>Home</Breadcrumb.Section>
-          <Breadcrumb.Divider />
-          <Breadcrumb.Section link>Store</Breadcrumb.Section>
-          <Breadcrumb.Divider />
-          <Breadcrumb.Section active>T-Shirt</Breadcrumb.Section>
-        </Breadcrumb>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit
