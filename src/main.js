@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {HashRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Grid, Menu, Segment ,Breadcrumb, Sidebar, Image, Header,
 Dropdown, Container} from 'semantic-ui-react';
 import SidebarOP from './Components/SidebarOP';
@@ -30,13 +30,13 @@ class Main extends Component {
         </Container>  
         <Container>
           <div>
-            <section>
+            <div>
               <SidebarOP visibleSideBar={this.state.visibleSideBar}/>
-            </section>
-              
-              <Sidebar.Pusher dimmed={true}>
-                <LoginPage />
+            </div>
+            <div style={{marginTop: '5%'}}>
+              <Sidebar.Pusher>
               </Sidebar.Pusher>
+            </div>  
           </div>
         </Container>
       </div>
