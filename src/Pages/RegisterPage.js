@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Grid, Header, Segment, Form, Message, Button} from 'semantic-ui-react';
+import {
+  Grid, Header, Segment, Form, Message, Button
+} from 'semantic-ui-react';
 import axios from 'axios';
 
 class RegisterPage extends Component {
@@ -9,7 +11,7 @@ class RegisterPage extends Component {
       name: ' ',
       surname: ' ',
       userName: ' ',
-      password: ' ', 
+      password: ' ',
       passwordAgain: ' ',
       email: ' '
     };
@@ -18,13 +20,13 @@ class RegisterPage extends Component {
     this.handleRegisterButton = this.handleRegisterButton.bind(this);
   }
 
-  handleChange = (e, {name, value}) => {
-    this.setState({[name]: value});
+  handleChange = (e, { name, value }) => {
+    this.setState({ [name]: value });
   }
 
-  handleRegisterButton = () =>{
-    /*axios({
-      method: 'post', 
+  handleRegisterButton = () => {
+    /* axios({
+      method: 'post',
       data:{},
       url='http://localhost:3000/signup',
       headers:{}
@@ -37,7 +39,7 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div style={{ float: 'center', display: 'block'}}>
+      <div style={{ float: 'center', display: 'block' }}>
         <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as="h2" color="teal" textAlign="center">
@@ -45,8 +47,8 @@ class RegisterPage extends Component {
             </Header>
             <Form size="large" onSubmit={this.handleLoginButton}>
               <Segment stacked>
-                <Form.Input fluid icon="user" onChange={this.handleChange} name="name" iconPosition="left" placeholder="Name"/>
-                <Form.Input fluid icon="user" onChange={this.handleChange} name="surname" iconPosition="left" placeholder="Surname"/>
+                <Form.Input fluid icon="user" onChange={this.handleChange} name="name" iconPosition="left" placeholder="Name" />
+                <Form.Input fluid icon="user" onChange={this.handleChange} name="surname" iconPosition="left" placeholder="Surname" />
                 <Form.Input fluid icon="user" onChange={this.handleChange} name="userName" iconPosition="left" placeholder="Username" />
                 <Form.Input fluid icon="user" onChange={this.handleChange} name="email" iconPosition="left" placeholder="E-mail address" />
                 <Form.Input
@@ -58,26 +60,28 @@ class RegisterPage extends Component {
                   type="password"
                   onChange={this.handleChange}
                 />
-                <Form.Input 
-                  fluid icon="lock" 
-                  iconPosition="left" 
-                  name="passwordAgain" 
-                  placeholder="Password Again" 
-                  type="password" 
+                <Form.Input
+                  fluid
+                  icon="lock"
+                  iconPosition="left"
+                  name="passwordAgain"
+                  placeholder="Password Again"
+                  type="password"
                   onChange={this.handleChange}
-                  />
+                />
                 <Button icon="add user" color="teal" fluid size="large">
                   Register
                 </Button>
               </Segment>
             </Form>
             <Message>
-              New to us? <a href="/signup">Sign Up</a>
+              New to us?
+              <a href="/signup">Sign Up</a>
             </Message>
           </Grid.Column>
         </Grid>
       </div>
-    )
+    );
   }
 }
 

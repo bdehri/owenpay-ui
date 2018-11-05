@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import {
-Form, Image, Grid, Button, Header, Message, Segment
+  Form, Grid, Button, Header, Message, Segment
 } from 'semantic-ui-react';
 import axios from 'axios';
 
-class LoginPage extends Component{
-  constructor(props){
+class LoginPage extends Component {
+  constructor(props) {
     super(props);
 
     this.handleChange = this.handleChange.bind(this);
     this.handleLoginButton = this.handleLoginButton.bind(this);
     this.state = {
-      email: "",
-      password: ""
-    }
-  };
-
-
+      email: '',
+      password: ''
+    };
+  }
 
   handleLoginButton = () => {
-    console.log("fired");
+    console.log('fired');
     /*axios({
       method:'post',
       url:'localhost:3000/signin/login',
@@ -29,14 +27,15 @@ class LoginPage extends Component{
       .then((response) => {
       });*/
   };
-  handleChange = (e,{name, value}) => {
-    this.setState({[name]: value});
+
+  handleChange = (e, { name, value }) => {
+    this.setState({ [name]: value });
   }
 
-  render(){
-    const {email, password} = this.state;
+  render() {
+    const { email, password } = this.state;
     return (
-      <div style={{ float: 'center', display: 'block'}}>
+      <div style={{ float: 'center', display: 'block' }}>
         <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as="h2" color="teal" textAlign="center">
@@ -60,15 +59,15 @@ class LoginPage extends Component{
               </Segment>
             </Form>
             <Message>
-              New to us? <a href="/signup">Sign Up</a>
+              New to us?
+              <a href="/signup">Sign Up</a>
             </Message>
           </Grid.Column>
         </Grid>
       </div>
-    )
+    );
   }
-};
+}
 
 
 export default LoginPage;
-
