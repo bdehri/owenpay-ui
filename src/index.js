@@ -5,14 +5,16 @@ import {HashRouter, Switch, Route} from 'react-router-dom';
 
 import './index.css';
 import App from './App';
-import Main from './main';
+import Main from './Containers/main';
 import LoginPage from './Pages/LoginPage';
+import RegisterPage from "./Pages/RegisterPage";
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <HashRouter>
     <Switch>
       <Route exact path="/login" component={LoginPage} />
+      <Route exact path="/register" component={RegisterPage} />
       <Route path="/" component={Main} />
     </Switch>
   </HashRouter>, document.getElementById('root'));

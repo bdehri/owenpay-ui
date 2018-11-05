@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Menu, Container, Image, Dropdown, Icon, Button
+  Menu, Container, Dropdown, Button
 } from 'semantic-ui-react';
 
 
@@ -10,7 +10,7 @@ const MenuOP = (props) => {
     <Menu fixed="top" inverted style={{ display: 'inline-block' }}>
       <Container style={{ width: '80%' }}>
         <Menu.Item>
-          <Icon name="angle right" as={Button} onClick={props.toggleButton} />
+          <Button icon="angle right" onClick={props.toggleButton} />
         </Menu.Item>
         <Menu.Item as="a" header>
           OweNPay
