@@ -28,17 +28,11 @@ class RegisterPage extends Component {
     axios({
       method: 'post',
       data: {
-        // eslint-disable-next-line react/destructuring-assignment
         name: this.state.name,
-        // eslint-disable-next-line react/destructuring-assignment
         surname: this.state.surname,
-        // eslint-disable-next-line react/destructuring-assignment
         userName: this.state.userName,
-        // eslint-disable-next-line react/destructuring-assignment
         password: this.state.password,
-        // eslint-disable-next-line react/destructuring-assignment
         passwordAgain: this.state.passwordAgain,
-        // eslint-disable-next-line react/destructuring-assignment
         email: this.state.email
       },
       url: 'http://localhost:3000/signup',

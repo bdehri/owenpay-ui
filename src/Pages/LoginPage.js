@@ -22,9 +22,7 @@ class LoginPage extends Component {
       method: 'post',
       url: 'backendurl',
       data: {
-        // eslint-disable-next-line react/destructuring-assignment
         email: this.state.email,
-        // eslint-disable-next-line react/destructuring-assignment
         password: this.state.password
       },
     })
