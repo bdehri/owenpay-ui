@@ -3,6 +3,7 @@ import {
   Form, Grid, Button, Header, Message, Segment
 } from 'semantic-ui-react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -17,15 +18,24 @@ class LoginPage extends Component {
   }
 
   handleLoginButton = () => {
-    console.log('fired');
-    /*axios({
-      method:'post',
-      url:'localhost:3000/signin/login',
-      data: {},
-      headers: {}
+    axios({
+      method: 'post',
+      url: 'backendurl',
+      data: {
+        // eslint-disable-next-line react/destructuring-assignment
+        email: this.state.email,
+        // eslint-disable-next-line react/destructuring-assignment
+        password: this.state.password
+      },
     })
       .then((response) => {
-      });*/
+        this.setState({
+          redirect: true
+        });
+      })
+      .catch((error) => {
+
+      });
   };
 
   handleChange = (e, { name, value }) => {
@@ -33,7 +43,10 @@ class LoginPage extends Component {
   }
 
   render() {
-    const { email, password } = this.state;
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to="/" />;
+    }
     return (
       <div style={{ float: 'center', display: 'block' }}>
         <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">

@@ -25,16 +25,30 @@ class RegisterPage extends Component {
   }
 
   handleRegisterButton = () => {
-    /* axios({
+    axios({
       method: 'post',
-      data:{},
-      url='http://localhost:3000/signup',
-      headers:{}
+      data: {
+        // eslint-disable-next-line react/destructuring-assignment
+        name: this.state.name,
+        // eslint-disable-next-line react/destructuring-assignment
+        surname: this.state.surname,
+        // eslint-disable-next-line react/destructuring-assignment
+        userName: this.state.userName,
+        // eslint-disable-next-line react/destructuring-assignment
+        password: this.state.password,
+        // eslint-disable-next-line react/destructuring-assignment
+        passwordAgain: this.state.passwordAgain,
+        // eslint-disable-next-line react/destructuring-assignment
+        email: this.state.email
+      },
+      url: 'http://localhost:3000/signup',
     })
-      .then((response) =>{
+      .then((response) => {
 
-    })*/
+      })
+      .catch((error) => {
 
+      });
   }
 
   render() {

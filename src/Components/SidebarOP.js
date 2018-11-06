@@ -7,11 +7,13 @@ import PropTypes from 'prop-types';
 class SidebarOP extends Component {
   constructor(props) {
     super(props);
+    // eslint-disable-next-line react/destructuring-assignment
     this.state = { visibleSideBar: this.props.visibleSideBar };
     this.handleSideBar = this.handleSideBar.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
+    // eslint-disable-next-line react/destructuring-assignment
     if (nextProps.visibleSideBar !== this.state.visibleSideBar) {
       this.setState({ visibleSideBar: nextProps.visibleSideBar });
     }
@@ -22,6 +24,7 @@ class SidebarOP extends Component {
   }
 
   render() {
+    const { visibleSideBar } = this.state;
     return (
       <div>
         <Sidebar
@@ -31,7 +34,7 @@ class SidebarOP extends Component {
           inverted
           onHide={this.handleSideBar}
           vertical
-          visible={this.state.visibleSideBar}
+          visible={visibleSideBar}
           width="thin"
           style={{ display: 'inline-block' }}
         >

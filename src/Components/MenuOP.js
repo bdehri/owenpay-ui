@@ -5,11 +5,11 @@ import {
 } from 'semantic-ui-react';
 
 
-const MenuOP = props => (
+const MenuOP = ({ toggleButton }) => (
   <Menu fixed="top" inverted style={{ display: 'inline-block' }}>
     <Container style={{ width: '80%' }}>
       <Menu.Item>
-        <Button icon="angle right" onClick={props.toggleButton} />
+        <Button icon="angle right" onClick={toggleButton} />
       </Menu.Item>
       <Menu.Item as="a" header>
           OweNPay
